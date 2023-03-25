@@ -12,7 +12,12 @@ namespace Harjoittelua
 {
     public partial class Form1 : Form
     {
-        //  {}
+        // firstClicked viittaa ensin klikattuun labeliin, mutta se on null, jos mitään ei ole vielä klikattu
+
+        Label firstClicked = null;
+        Label secondClicked = null;
+
+        // {}
         // Tehdään Random-objekti to choose random ikonit neliöihin
         // Webdings fontti on ikoneita, tehdään lista, jossa jokainen ikoni = kirjain esiintyy kahdesti
 
@@ -45,8 +50,16 @@ namespace Harjoittelua
             AssignIconsToSquares();
         }
 
+        // Jokaisen labelin klikkaus käsitellään tällä metodilla
+
         private void label1_Click(object sender, EventArgs e)
         {
+            // timer on käynnissä kahden eri ikonin valinnan jälkeen, joten timerin ollessa
+            // päällä, klikkaukset ignoorataan
+
+            if (timer1.Enabled == true)
+                return;
+
             Label clickedLabel = sender as Label;
 
             if (clickedLabel != null)
@@ -54,8 +67,72 @@ namespace Harjoittelua
                 if (clickedLabel.ForeColor == Color.White)
                     return;
 
-                clickedLabel.ForeColor = Color.White;
+                if (firstClicked == null)
+                {
+                    firstClicked = clickedLabel;
+                    firstClicked.ForeColor = Color.White;
+
+                    return;
+                }
+
+                // Jos pelaaja pääsee tänne asti, timer ei ole päällä ja firstClicked 
+                // ei ole null, tämän täytyy olla toinen klikkaus, asetetaan väri valkoiseksi
+
+                secondClicked = clickedLabel;
+                secondClicked.ForeColor = Color.White;
+
+                // jos ikonit ovat samat, resetoidaan arvot, jotta ikonit jäävät näkyviin
+
+                if (firstClicked.Text == secondClicked.Text)
+                {
+                    firstClicked = null;
+                    secondClicked = null;
+                    return;
+                }
+
+
+                // Tähän kohtaan koodi äänen käynnistyksestä, kun on valittu eri ikonit
+
+                timer1.Start();
+
+                // clickedLabel.ForeColor = Color.White;
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // ensin pysäytetään timer ja piilotetaan ikonit
+            // sen jälkeen resetoidaan firstClicked ja secondClicked jotta seuraavan 
+            // kerran kun ruutua klikataan, ohjelma tietään sen olevan ensimmäinen klikkaus
+
+            timer1.Stop();
+
+            firstClicked.ForeColor = firstClicked.BackColor;
+            secondClicked.ForeColor = secondClicked.BackColor;
+
+            firstClicked = null;
+            secondClicked = null;
+        }
+
+        // Tarkistetaan jokainen ikoni nähdäksemme, onko sillä pari, vertaamalla
+        // sen foreground väriä background väriin. Jos kaikilla ikoneilla on pari, 
+        // pelaaja voittaa
+
+        private void CheckForWinner()
+        {
+            foreach (Control control in tableLayoutPanel1.Controls)
+            {
+                Label iconLabel = control as Label;
+
+                if (iconLabel != null)
+                {
+                    if (iconLabel.ForeColor  )
+                    {
+                        
+                    }
+                }
+            }
+        }
+
     }
 }
