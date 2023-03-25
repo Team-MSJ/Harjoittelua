@@ -81,6 +81,10 @@ namespace Harjoittelua
                 secondClicked = clickedLabel;
                 secondClicked.ForeColor = Color.White;
 
+                // Tarkistetaan, onko pelaaja voittanut
+
+                CheckForWinner();
+
                 // jos ikonit ovat samat, resetoidaan arvot, jotta ikonit jäävät näkyviin
 
                 if (firstClicked.Text == secondClicked.Text)
@@ -126,12 +130,17 @@ namespace Harjoittelua
 
                 if (iconLabel != null)
                 {
-                    if (iconLabel.ForeColor  )
-                    {
-                        
-                    }
+                    if (iconLabel.ForeColor == iconLabel.BackColor)
+                        return;
+                    
                 }
             }
+
+            // Jos luuppi ei palannut, ei se löytänyt mätsäämättömiä ikoneita
+            // pelaaja voitti
+
+            MessageBox.Show("Ihme kyllä löysit ne parit",  "Onnea nyt sitten");
+            Close();
         }
 
     }
