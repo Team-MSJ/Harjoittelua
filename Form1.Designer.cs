@@ -49,6 +49,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label17 = new System.Windows.Forms.Label();
             this.SumOfPoints = new System.Windows.Forms.Label();
+            this.Start = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -333,13 +334,23 @@
             this.SumOfPoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.SumOfPoints.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SumOfPoints.ForeColor = System.Drawing.Color.White;
-            this.SumOfPoints.Location = new System.Drawing.Point(746, 49);
+            this.SumOfPoints.Location = new System.Drawing.Point(730, 49);
             this.SumOfPoints.Name = "SumOfPoints";
             this.SumOfPoints.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SumOfPoints.Size = new System.Drawing.Size(120, 40);
+            this.SumOfPoints.Size = new System.Drawing.Size(140, 40);
             this.SumOfPoints.TabIndex = 2;
             this.SumOfPoints.Text = "0";
             this.SumOfPoints.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // Start
+            // 
+            this.Start.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start.Location = new System.Drawing.Point(730, 186);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(140, 43);
+            this.Start.TabIndex = 3;
+            this.Start.Text = "Try to Win";
+            this.Start.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -347,6 +358,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(884, 511);
+            this.Controls.Add(this.Start);
             this.Controls.Add(this.SumOfPoints);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -379,6 +391,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label SumOfPoints;
+        private System.Windows.Forms.Button Start;
     }
 }
 

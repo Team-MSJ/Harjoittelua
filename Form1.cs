@@ -168,7 +168,7 @@ namespace Harjoittelua
             // Jos luuppi ei palannut, ei se löytänyt mätsäämättömiä ikoneita
             // pelaaja voitti
 
-            MessageBox.Show("Ihme kyllä löysit ne parit" + points,  "Onnea nyt sitten");
+            MessageBox.Show("Miten sä ton teit?", "Onnea nyt sitten");
             Close();
         }
     }
