@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,12 @@ namespace Harjoittelua
 
         Label firstClicked = null;
         Label secondClicked = null;
+
+        int points = 0;
+
+        
+        // SumOfPoints.Text = points.ToString();
+ 
 
         // {}
         // Tehdään Random-objekti to choose random ikonit neliöihin
@@ -89,11 +96,17 @@ namespace Harjoittelua
 
                 if (firstClicked.Text == secondClicked.Text)
                 {
+                    points += 100;
+                    SumOfPoints.Text = points.ToString();
+                    VoiceForMatching();
                     firstClicked = null;
                     secondClicked = null;
                     return;
                 }
 
+                points -= 10;
+                SumOfPoints.Text = points.ToString();
+                VoiceForUnmatching();
 
                 // Tähän kohtaan koodi äänen käynnistyksestä, kun on valittu eri ikonit
 
@@ -118,6 +131,22 @@ namespace Harjoittelua
             secondClicked = null;
         }
 
+        private void VoiceForUnmatching()
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = @"C:\Users\satu.suopanki\Music\R2D2-do.wav";
+            player.Load();
+            player.Play();
+        }
+
+        private void VoiceForMatching()
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = @"C:\Users\satu.suopanki\Music\R2D2-hey-you.wav";
+            player.Load();
+            player.Play();
+        }
+
         // Tarkistetaan jokainen ikoni nähdäksemme, onko sillä pari, vertaamalla
         // sen foreground väriä background väriin. Jos kaikilla ikoneilla on pari, 
         // pelaaja voittaa
@@ -139,9 +168,8 @@ namespace Harjoittelua
             // Jos luuppi ei palannut, ei se löytänyt mätsäämättömiä ikoneita
             // pelaaja voitti
 
-            MessageBox.Show("Ihme kyllä löysit ne parit",  "Onnea nyt sitten");
+            MessageBox.Show("Ihme kyllä löysit ne parit" + points,  "Onnea nyt sitten");
             Close();
         }
-
     }
 }
