@@ -134,7 +134,7 @@ namespace Harjoittelua
         private void VoiceForUnmatching()
         {
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = @"R2D2-do.wav";
+            player.SoundLocation = @"Resources/R2D2-do.wav";
             player.Load();
             player.Play();
         }
@@ -142,7 +142,7 @@ namespace Harjoittelua
         private void VoiceForMatching()
         {
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = @"C:\Users\satu.suopanki\source\repos\Harjoittelua\R2D2-hey-you.wav";
+            player.SoundLocation = @"Resources/R2D2-hey-you.wav";
             player.Load();
             player.Play();
         }
