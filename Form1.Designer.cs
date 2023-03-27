@@ -50,6 +50,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.SumOfPoints = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -352,12 +355,42 @@
             this.Start.Text = "Try to Win";
             this.Start.UseVisualStyleBackColor = true;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.BackColor = System.Drawing.Color.DimGray;
+            this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.timeLabel.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold);
+            this.timeLabel.ForeColor = System.Drawing.Color.White;
+            this.timeLabel.Location = new System.Drawing.Point(718, 282);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(152, 40);
+            this.timeLabel.TabIndex = 2;
+            this.timeLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(584, 282);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(128, 40);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Time Left";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(884, 511);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.SumOfPoints);
             this.Controls.Add(this.label17);
@@ -392,6 +425,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label SumOfPoints;
         private System.Windows.Forms.Button Start;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Label label18;
     }
 }
 

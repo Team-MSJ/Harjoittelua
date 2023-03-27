@@ -134,7 +134,7 @@ namespace Harjoittelua
         private void VoiceForUnmatching()
         {
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = @"C:\Users\satu.suopanki\Music\R2D2-do.wav";
+            player.SoundLocation = @".\Sounds\R2D2-do.wav";
             player.Load();
             player.Play();
         }
@@ -142,7 +142,7 @@ namespace Harjoittelua
         private void VoiceForMatching()
         {
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = @"C:\Users\satu.suopanki\Music\R2D2-hey-you.wav";
+            player.SoundLocation = @".\Sounds\R2D2-hey-you.wav";
             player.Load();
             player.Play();
         }
@@ -151,7 +151,7 @@ namespace Harjoittelua
         // sen foreground väriä background väriin. Jos kaikilla ikoneilla on pari, 
         // pelaaja voittaa
 
-        private void CheckForWinner()
+        private bool CheckForWinner()
         {
             foreach (Control control in tableLayoutPanel1.Controls)
             {
@@ -160,7 +160,7 @@ namespace Harjoittelua
                 if (iconLabel != null)
                 {
                     if (iconLabel.ForeColor == iconLabel.BackColor)
-                        return;
+                        return false;
                     
                 }
             }
@@ -170,6 +170,32 @@ namespace Harjoittelua
 
             MessageBox.Show("Miten sä ton teit?", "Onnea nyt sitten");
             Close();
+            timer2.Stop();
+            return true;
+        }
+
+        // This integer variable keeps track of the 
+        // remaining game time.
+        int timeLeft;
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                //Decrease the time left by one second and 
+                // display the new time left by updating the 
+                // Time Left label.
+                timeLeft = timeLeft - 1;
+                timeLabel.Text = timeLeft + " seconds";
+            }
+            else
+            {
+                // If the user ran out of time, stop the timer, show
+                // a MessageBox.
+                timer2.Stop();
+                timeLabel.Text = "0";
+                MessageBox.Show("Aika loppui looseri!");
+            }
         }
     }
 }
