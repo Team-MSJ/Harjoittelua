@@ -134,7 +134,7 @@ namespace Harjoittelua
         private void VoiceForUnmatching()
         {
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = @"C:\Users\satu.suopanki\source\repos\Harjoittelua\R2D2-do.wav";
+            player.SoundLocation = @"R2D2-do.wav";
             player.Load();
             player.Play();
         }
