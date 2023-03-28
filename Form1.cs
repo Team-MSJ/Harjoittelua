@@ -20,10 +20,6 @@ namespace Harjoittelua
 
         int points = 0;
 
-        
-        // SumOfPoints.Text = points.ToString();
- 
-
         // {}
         // Tehdään Random-objekti to choose random ikonit neliöihin
         // Webdings fontti on ikoneita, tehdään lista, jossa jokainen ikoni = kirjain esiintyy kahdesti
@@ -96,6 +92,7 @@ namespace Harjoittelua
 
                 if (firstClicked.Text == secondClicked.Text)
                 {
+                    // Oikeasta valinnasta eli parista saa 100 pistettä, ja soitetaan oma ääni
                     points += 100;
                     SumOfPoints.Text = points.ToString();
                     VoiceForMatching();
@@ -104,11 +101,10 @@ namespace Harjoittelua
                     return;
                 }
 
-                points -= 10;
+                // Väärästä valinnasta eli epäparista vähennetään 40 pistettä ja soitetaan oma ääni
+                points -= 40;
                 SumOfPoints.Text = points.ToString();
                 VoiceForUnmatching();
-
-                // Tähän kohtaan koodi äänen käynnistyksestä, kun on valittu eri ikonit
 
                 timer1.Start();
 
@@ -147,6 +143,14 @@ namespace Harjoittelua
             player.Play();
         }
 
+        private void VoiceForGameEnd()
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = @"Resources/swluke01.wav";
+            player.Load();
+            player.Play();
+        }
+
         // Tarkistetaan jokainen ikoni nähdäksemme, onko sillä pari, vertaamalla
         // sen foreground väriä background väriin. Jos kaikilla ikoneilla on pari, 
         // pelaaja voittaa
@@ -168,6 +172,7 @@ namespace Harjoittelua
             // Jos luuppi ei palannut, ei se löytänyt mätsäämättömiä ikoneita
             // pelaaja voitti
 
+            VoiceForGameEnd();
             MessageBox.Show("Miten sä ton teit?", "Onnea nyt sitten");
             Close();
         }
