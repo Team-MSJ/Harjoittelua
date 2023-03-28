@@ -168,16 +168,16 @@ namespace Harjoittelua
             // Jos luuppi ei palannut, ei se löytänyt mätsäämättömiä ikoneita
             // pelaaja voitti
 
-            MessageBox.Show("Miten sä ton teit?", "Onnea nyt sitten");
-            Close();
             timer2.Stop();
+            MessageBox.Show("Miten sä ton teit? Onnea nyt sitten");
+            Close();           
             return true;
         }
 
         // This integer variable keeps track of the 
-        // remaining game time.
-        int timeLeft;
-
+        // remaining game time.       
+        int timeLeft = 60;
+        
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (timeLeft > 0)
@@ -186,16 +186,23 @@ namespace Harjoittelua
                 // display the new time left by updating the 
                 // Time Left label.
                 timeLeft = timeLeft - 1;
-                timeLabel.Text = timeLeft + " seconds";
+                timeLabel.Text = timeLeft + " sec ";
             }
             else
             {
                 // If the user ran out of time, stop the timer, show
                 // a MessageBox.
                 timer2.Stop();
-                timeLabel.Text = "0";
+                timeLabel.Text = "!!!!!!";
                 MessageBox.Show("Aika loppui looseri!");
+                Close();
             }
+        }
+        private void startti_Click(object sender, EventArgs e)
+        {
+            timer2.Start();
+            timeLeft = timeLeft - 1;
+            timeLabel.Text = timeLeft + " sec ";
         }
     }
 }
