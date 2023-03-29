@@ -185,9 +185,13 @@ namespace Harjoittelua
             // pelaaja voitti
             VoiceForGameEndWinner();
             timer2.Stop();
+
+            //Close();//tämä pois päältä esityksen aikana ja miks ei aina.          
+
             MessageBox.Show("Miten sä ton teit ? ? ? Onnea nyt sitten", "Dark Mode The Game", MessageBoxButtons.OK);
 
             Close();           
+
             return true;
         }
 
@@ -212,8 +216,8 @@ namespace Harjoittelua
                 VoiceForGameEndLooser();
                 timer2.Stop();
                 timeLabel.Text = "!!!!!!";
-                MessageBox.Show("Aika loppui looseri!", "Dark Mode The Game", MessageBoxButtons.OK);
-                Close();
+                MessageBox.Show("Aika loppui looseri!");
+                //Close();//tämä pois päältä esityksen aikana ja miks ei aina.
             }
         }
         private void startti_Click(object sender, EventArgs e)
