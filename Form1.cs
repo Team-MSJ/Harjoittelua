@@ -187,7 +187,7 @@ namespace Harjoittelua
             VoiceForGameEndWinner();
             timer2.Stop();
             MessageBox.Show("Miten sä ton teit? Onnea nyt sitten");
-            Close();           
+            //Close();//tämä pois päältä esityksen aikana ja miks ei aina.           
             return true;
         }
 
@@ -213,7 +213,7 @@ namespace Harjoittelua
                 timer2.Stop();
                 timeLabel.Text = "!!!!!!";
                 MessageBox.Show("Aika loppui looseri!");
-                Close();
+                //Close();//tämä pois päältä esityksen aikana ja miks ei aina.
             }
         }
         private void startti_Click(object sender, EventArgs e)
