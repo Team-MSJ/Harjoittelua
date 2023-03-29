@@ -8,6 +8,7 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Harjoittelua
 {
@@ -65,6 +66,9 @@ namespace Harjoittelua
             // päällä, klikkaukset ignoorataan
 
             if (timer1.Enabled == true)
+                return;
+
+            if (timer2.Enabled == false)
                 return;
 
             Label clickedLabel = sender as Label;
@@ -201,8 +205,46 @@ namespace Harjoittelua
         private void startti_Click(object sender, EventArgs e)
         {
             timer2.Start();
-            timeLeft = timeLeft - 1;
+        }
+        private int currentImageIndex = 0;
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            vaihdaKuva();
+        }
+
+        private void vaihdaKuva()
+        {
+            currentImageIndex++;
+            if (currentImageIndex >= imageList1.Images.Count)
+            {
+                currentImageIndex = 0;
+            }
+            mainos.Image = imageList1.Images[currentImageIndex];
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            vaihdaKuva();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timeLeft = timeLeft - 3;
             timeLabel.Text = timeLeft + " sec ";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in tableLayoutPanel1.Controls)
+            {
+                Label iconLabel = control as Label;
+
+                if (iconLabel != null)
+                {
+                    iconLabel.ForeColor = Color.White;
+                }
+            }
+            CheckForWinner();
         }
     }
 }

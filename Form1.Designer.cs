@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -53,7 +54,13 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.startti = new System.Windows.Forms.Button();
+            this.mainos = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.sec_down = new System.Windows.Forms.Button();
+            this.win_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainos)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -325,7 +332,7 @@
             this.label17.BackColor = System.Drawing.Color.Black;
             this.label17.Font = new System.Drawing.Font("Ink Free", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(564, 49);
+            this.label17.Location = new System.Drawing.Point(564, 24);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(160, 40);
             this.label17.TabIndex = 1;
@@ -337,7 +344,7 @@
             this.SumOfPoints.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.SumOfPoints.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SumOfPoints.ForeColor = System.Drawing.Color.White;
-            this.SumOfPoints.Location = new System.Drawing.Point(730, 49);
+            this.SumOfPoints.Location = new System.Drawing.Point(730, 23);
             this.SumOfPoints.Name = "SumOfPoints";
             this.SumOfPoints.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SumOfPoints.Size = new System.Drawing.Size(140, 40);
@@ -356,7 +363,7 @@
             this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.timeLabel.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold);
             this.timeLabel.ForeColor = System.Drawing.Color.IndianRed;
-            this.timeLabel.Location = new System.Drawing.Point(730, 159);
+            this.timeLabel.Location = new System.Drawing.Point(730, 100);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(142, 40);
             this.timeLabel.TabIndex = 2;
@@ -368,7 +375,7 @@
             this.label18.BackColor = System.Drawing.Color.Black;
             this.label18.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(565, 159);
+            this.label18.Location = new System.Drawing.Point(565, 100);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(154, 41);
             this.label18.TabIndex = 4;
@@ -380,7 +387,7 @@
             this.startti.BackColor = System.Drawing.Color.DimGray;
             this.startti.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold);
             this.startti.ForeColor = System.Drawing.Color.YellowGreen;
-            this.startti.Location = new System.Drawing.Point(613, 344);
+            this.startti.Location = new System.Drawing.Point(613, 430);
             this.startti.Name = "startti";
             this.startti.Size = new System.Drawing.Size(166, 69);
             this.startti.TabIndex = 5;
@@ -388,12 +395,66 @@
             this.startti.UseVisualStyleBackColor = false;
             this.startti.Click += new System.EventHandler(this.startti_Click);
             // 
+            // mainos
+            // 
+            this.mainos.BackColor = System.Drawing.Color.White;
+            this.mainos.Location = new System.Drawing.Point(553, 179);
+            this.mainos.Name = "mainos";
+            this.mainos.Size = new System.Drawing.Size(293, 195);
+            this.mainos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mainos.TabIndex = 6;
+            this.mainos.TabStop = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "01.jpg");
+            this.imageList1.Images.SetKeyName(1, "02.jpg");
+            this.imageList1.Images.SetKeyName(2, "03.PNG");
+            this.imageList1.Images.SetKeyName(3, "05.PNG");
+            this.imageList1.Images.SetKeyName(4, "06.jpg");
+            this.imageList1.Images.SetKeyName(5, "mk2.jpg");
+            this.imageList1.Images.SetKeyName(6, "nokia.PNG");
+            // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 3000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // sec_down
+            // 
+            this.sec_down.BackColor = System.Drawing.Color.Transparent;
+            this.sec_down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sec_down.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.sec_down.Location = new System.Drawing.Point(866, 496);
+            this.sec_down.Name = "sec_down";
+            this.sec_down.Size = new System.Drawing.Size(18, 16);
+            this.sec_down.TabIndex = 7;
+            this.sec_down.UseVisualStyleBackColor = false;
+            this.sec_down.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // win_button
+            // 
+            this.win_button.BackColor = System.Drawing.Color.Transparent;
+            this.win_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.win_button.Location = new System.Drawing.Point(873, 3);
+            this.win_button.Name = "win_button";
+            this.win_button.Size = new System.Drawing.Size(11, 11);
+            this.win_button.TabIndex = 8;
+            this.win_button.UseVisualStyleBackColor = false;
+            this.win_button.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(884, 511);
+            this.Controls.Add(this.win_button);
+            this.Controls.Add(this.sec_down);
+            this.Controls.Add(this.mainos);
             this.Controls.Add(this.startti);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.timeLabel);
@@ -402,7 +463,9 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Synkkä Teema -muistipeli";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mainos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -433,6 +496,11 @@
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button startti;
+        private System.Windows.Forms.PictureBox mainos;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Button sec_down;
+        private System.Windows.Forms.Button win_button;
     }
 }
 
