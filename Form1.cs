@@ -182,7 +182,10 @@ namespace Harjoittelua
             // pelaaja voitti
             VoiceForGameEndWinner();
             timer2.Stop();
-            MessageBox.Show("Miten sä ton teit? Onnea nyt sitten");
+            //MessageBox.Show("Miten sä ton teit? Onnea nyt sitten");
+
+            MessageBox.Show("Miten sä ton teit ? ? ? Onnea nyt sitten", "Dark Mode The Game", MessageBoxButtons.OK);
+
             Close();           
             return true;
         }
