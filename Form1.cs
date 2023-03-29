@@ -180,7 +180,7 @@ namespace Harjoittelua
 
             // Jos luuppi ei palannut, ei se löytänyt mätsäämättömiä ikoneita
             // pelaaja voitti
-
+            VoiceForGameEndWinner();
             timer2.Stop();
             MessageBox.Show("Miten sä ton teit? Onnea nyt sitten");
             Close();           
@@ -205,6 +205,7 @@ namespace Harjoittelua
             {
                 // If the user ran out of time, stop the timer, show
                 // a MessageBox.
+                VoiceForGameEndLooser();
                 timer2.Stop();
                 timeLabel.Text = "!!!!!!";
                 MessageBox.Show("Aika loppui looseri!");

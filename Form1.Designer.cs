@@ -401,7 +401,7 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "Synkkä Teema -muistipeli";
+            this.Text = "Dark Mode The Game";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
