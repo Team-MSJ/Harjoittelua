@@ -120,5 +120,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congratulations-winner.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\haha.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

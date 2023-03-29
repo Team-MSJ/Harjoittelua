@@ -29,6 +29,7 @@ namespace Harjoittelua
         List<string> icons = new List<string>()
         {"M", "M", "S", "S", "T", "T", "i", "i", "a", "a", "t", "t", "7", "7", "H", "H"};
 
+
         // Metodi sijoittaa pelin neliöihin merkit satunnaisesti
 
         private void AssignIconsToSquares()
@@ -50,7 +51,7 @@ namespace Harjoittelua
         {
             InitializeComponent();
 
-            AssignIconsToSquares();
+            AssignIconsToSquares();           
         }
 
         // Jokaisen labelin klikkaus käsitellään tällä metodilla
@@ -143,10 +144,18 @@ namespace Harjoittelua
             player.Play();
         }
 
-        private void VoiceForGameEnd()
+        private void VoiceForGameEndWinner()
         {
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = @"Resources/swluke01.wav";
+            player.SoundLocation = @"Resources/congratulations-winner.wav";
+            player.Load();
+            player.Play();
+        }
+
+        private void VoiceForGameEndLooser()
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = @"Resources/haha.wav";
             player.Load();
             player.Play();
         }
@@ -172,7 +181,7 @@ namespace Harjoittelua
             // Jos luuppi ei palannut, ei se löytänyt mätsäämättömiä ikoneita
             // pelaaja voitti
 
-            VoiceForGameEnd();
+            VoiceForGameEndWinner();
             MessageBox.Show("Miten sä ton teit?", "Onnea nyt sitten");
             Close();
         }
