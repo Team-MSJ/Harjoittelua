@@ -58,7 +58,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.sec_down = new System.Windows.Forms.Button();
-            this.win_button = new System.Windows.Forms.Button();
+            this.voittonappi = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainos)).BeginInit();
             this.SuspendLayout();
@@ -435,16 +435,16 @@
             this.sec_down.UseVisualStyleBackColor = false;
             this.sec_down.Click += new System.EventHandler(this.button1_Click);
             // 
-            // win_button
+            // voittonappi
             // 
-            this.win_button.BackColor = System.Drawing.Color.Transparent;
-            this.win_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.win_button.Location = new System.Drawing.Point(873, 3);
-            this.win_button.Name = "win_button";
-            this.win_button.Size = new System.Drawing.Size(11, 11);
-            this.win_button.TabIndex = 8;
-            this.win_button.UseVisualStyleBackColor = false;
-            this.win_button.Click += new System.EventHandler(this.button2_Click);
+            this.voittonappi.BackColor = System.Drawing.Color.Transparent;
+            this.voittonappi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.voittonappi.Location = new System.Drawing.Point(873, 3);
+            this.voittonappi.Name = "voittonappi";
+            this.voittonappi.Size = new System.Drawing.Size(11, 11);
+            this.voittonappi.TabIndex = 8;
+            this.voittonappi.UseVisualStyleBackColor = false;
+            this.voittonappi.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -452,7 +452,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(884, 511);
-            this.Controls.Add(this.win_button);
+            this.Controls.Add(this.voittonappi);
             this.Controls.Add(this.sec_down);
             this.Controls.Add(this.mainos);
             this.Controls.Add(this.startti);
@@ -500,7 +500,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Button sec_down;
-        private System.Windows.Forms.Button win_button;
+        private System.Windows.Forms.Button voittonappi;
     }
 }
 
