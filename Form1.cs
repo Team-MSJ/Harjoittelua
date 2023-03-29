@@ -20,10 +20,6 @@ namespace Harjoittelua
 
         int points = 0;
 
-        
-        // SumOfPoints.Text = points.ToString();
- 
-
         // {}
         // Tehdään Random-objekti to choose random ikonit neliöihin
         // Webdings fontti on ikoneita, tehdään lista, jossa jokainen ikoni = kirjain esiintyy kahdesti
@@ -31,7 +27,8 @@ namespace Harjoittelua
         Random random = new Random();
 
         List<string> icons = new List<string>()
-        {"M", "M", "S", "S", "T", "T", "i", "i", "a", "a", "t", "t", "7", "7", "H", "H"};
+        {"a", "a", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9"};
+
 
         // Metodi sijoittaa pelin neliöihin merkit satunnaisesti
 
@@ -54,7 +51,7 @@ namespace Harjoittelua
         {
             InitializeComponent();
 
-            AssignIconsToSquares();
+            AssignIconsToSquares();           
         }
 
         // Jokaisen labelin klikkaus käsitellään tällä metodilla
@@ -96,6 +93,7 @@ namespace Harjoittelua
 
                 if (firstClicked.Text == secondClicked.Text)
                 {
+                    // Oikeasta valinnasta eli parista saa 100 pistettä, ja soitetaan oma ääni
                     points += 100;
                     SumOfPoints.Text = points.ToString();
                     VoiceForMatching();
@@ -104,11 +102,10 @@ namespace Harjoittelua
                     return;
                 }
 
-                points -= 10;
+                // Väärästä valinnasta eli epäparista vähennetään 40 pistettä ja soitetaan oma ääni
+                points -= 40;
                 SumOfPoints.Text = points.ToString();
                 VoiceForUnmatching();
-
-                // Tähän kohtaan koodi äänen käynnistyksestä, kun on valittu eri ikonit
 
                 timer1.Start();
 
@@ -134,7 +131,7 @@ namespace Harjoittelua
         private void VoiceForUnmatching()
         {
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = @".\Sounds\R2D2-do.wav";
+            player.SoundLocation = @"Resources/R2D2-do.wav";
             player.Load();
             player.Play();
         }
@@ -142,7 +139,23 @@ namespace Harjoittelua
         private void VoiceForMatching()
         {
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = @".\Sounds\R2D2-hey-you.wav";
+            player.SoundLocation = @"Resources/R2D2-hey-you.wav";
+            player.Load();
+            player.Play();
+        }
+
+        private void VoiceForGameEndWinner()
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = @"Resources/congratulations-winner.wav";
+            player.Load();
+            player.Play();
+        }
+
+        private void VoiceForGameEndLooser()
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = @"Resources/haha.wav";
             player.Load();
             player.Play();
         }
