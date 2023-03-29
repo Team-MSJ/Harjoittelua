@@ -216,7 +216,7 @@ namespace Harjoittelua
                 VoiceForGameEndLooser();
                 timer2.Stop();
                 timeLabel.Text = "!!!!!!";
-                MessageBox.Show("Aika loppui looseri!");
+                MessageBox.Show("Aika loppui looseri!", "Dark Mode The Game", MessageBoxButtons.OK);
                 //Close();//tämä pois päältä esityksen aikana ja miks ei aina.
             }
         }
