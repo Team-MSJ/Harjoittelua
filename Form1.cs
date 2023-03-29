@@ -27,7 +27,7 @@ namespace Harjoittelua
         Random random = new Random();
 
         List<string> icons = new List<string>()
-        {"M", "M", "S", "S", "T", "T", "i", "i", "a", "a", "t", "t", "7", "7", "H", "H"};
+        {"a", "a", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9"};
 
 
         // Metodi sijoittaa pelin neliöihin merkit satunnaisesti
