@@ -410,12 +410,14 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "01.jpg");
-            this.imageList1.Images.SetKeyName(1, "02.jpg");
-            this.imageList1.Images.SetKeyName(2, "03.PNG");
-            this.imageList1.Images.SetKeyName(3, "05.PNG");
-            this.imageList1.Images.SetKeyName(4, "06.jpg");
-            this.imageList1.Images.SetKeyName(5, "mk2.jpg");
-            this.imageList1.Images.SetKeyName(6, "nokia.PNG");
+            this.imageList1.Images.SetKeyName(1, "03.PNG");
+            this.imageList1.Images.SetKeyName(2, "05.PNG");
+            this.imageList1.Images.SetKeyName(3, "06.jpg");
+            this.imageList1.Images.SetKeyName(4, "mk2.jpg");
+            this.imageList1.Images.SetKeyName(5, "nokia.PNG");
+            this.imageList1.Images.SetKeyName(6, "02.PNG");
+            this.imageList1.Images.SetKeyName(7, "09.PNG");
+            this.imageList1.Images.SetKeyName(8, "010.PNG");
             // 
             // timer3
             // 
