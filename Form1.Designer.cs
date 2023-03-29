@@ -49,6 +49,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label17 = new System.Windows.Forms.Label();
             this.SumOfPoints = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.startti = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -321,7 +325,7 @@
             this.label17.BackColor = System.Drawing.Color.Black;
             this.label17.Font = new System.Drawing.Font("Ink Free", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(511, 49);
+            this.label17.Location = new System.Drawing.Point(564, 49);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(160, 40);
             this.label17.TabIndex = 1;
@@ -341,12 +345,58 @@
             this.SumOfPoints.Text = "0";
             this.SumOfPoints.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.BackColor = System.Drawing.Color.DimGray;
+            this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.timeLabel.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold);
+            this.timeLabel.ForeColor = System.Drawing.Color.IndianRed;
+            this.timeLabel.Location = new System.Drawing.Point(730, 159);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(142, 40);
+            this.timeLabel.TabIndex = 2;
+            this.timeLabel.Text = "60 sec";
+            this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Black;
+            this.label18.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold);
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(565, 159);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(154, 41);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Time Left";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // startti
+            // 
+            this.startti.BackColor = System.Drawing.Color.DimGray;
+            this.startti.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold);
+            this.startti.ForeColor = System.Drawing.Color.YellowGreen;
+            this.startti.Location = new System.Drawing.Point(613, 344);
+            this.startti.Name = "startti";
+            this.startti.Size = new System.Drawing.Size(166, 69);
+            this.startti.TabIndex = 5;
+            this.startti.Text = "Start";
+            this.startti.UseVisualStyleBackColor = false;
+            this.startti.Click += new System.EventHandler(this.startti_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(884, 511);
+            this.Controls.Add(this.startti);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.SumOfPoints);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -379,6 +429,10 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label SumOfPoints;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button startti;
     }
 }
 

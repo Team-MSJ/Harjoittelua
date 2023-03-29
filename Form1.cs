@@ -164,7 +164,7 @@ namespace Harjoittelua
         // sen foreground väriä background väriin. Jos kaikilla ikoneilla on pari, 
         // pelaaja voittaa
 
-        private void CheckForWinner()
+        private bool CheckForWinner()
         {
             foreach (Control control in tableLayoutPanel1.Controls)
             {
@@ -173,7 +173,7 @@ namespace Harjoittelua
                 if (iconLabel != null)
                 {
                     if (iconLabel.ForeColor == iconLabel.BackColor)
-                        return;
+                        return false;
                     
                 }
             }
@@ -181,9 +181,41 @@ namespace Harjoittelua
             // Jos luuppi ei palannut, ei se löytänyt mätsäämättömiä ikoneita
             // pelaaja voitti
 
-            VoiceForGameEndWinner();
-            MessageBox.Show("Miten sä ton teit?", "Onnea nyt sitten");
-            Close();
+            timer2.Stop();
+            MessageBox.Show("Miten sä ton teit? Onnea nyt sitten");
+            Close();           
+            return true;
+        }
+
+        // This integer variable keeps track of the 
+        // remaining game time.       
+        int timeLeft = 60;
+        
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                //Decrease the time left by one second and 
+                // display the new time left by updating the 
+                // Time Left label.
+                timeLeft = timeLeft - 1;
+                timeLabel.Text = timeLeft + " sec ";
+            }
+            else
+            {
+                // If the user ran out of time, stop the timer, show
+                // a MessageBox.
+                timer2.Stop();
+                timeLabel.Text = "!!!!!!";
+                MessageBox.Show("Aika loppui looseri!");
+                Close();
+            }
+        }
+        private void startti_Click(object sender, EventArgs e)
+        {
+            timer2.Start();
+            timeLeft = timeLeft - 1;
+            timeLabel.Text = timeLeft + " sec ";
         }
     }
 }
