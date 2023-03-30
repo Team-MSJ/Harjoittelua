@@ -21,7 +21,6 @@ namespace Harjoittelua
 
         int points = 0;
 
-        // {}
         // Tehdään Random-objekti to choose random ikonit neliöihin
         // Webdings fontti on ikoneita, tehdään lista, jossa jokainen ikoni = kirjain esiintyy kahdesti
 
@@ -199,8 +198,9 @@ namespace Harjoittelua
 
             MessageBox.Show("Miten sä ton teit ? ? ? Onnea nyt sitten", "Dark Mode The Game", MessageBoxButtons.OK);
 
-            //Close();           
 
+            //Close();                     
+            
             return true;
         }
 
@@ -225,7 +225,7 @@ namespace Harjoittelua
                 VoiceForGameEndLooser();
                 timer2.Stop();
                 timeLabel.Text = "!!!!!!";
-                MessageBox.Show("Aika loppui looseri!");
+                MessageBox.Show("Aika loppui looseri!", "Dark Mode The Game", MessageBoxButtons.OK);
                 //Close();//tämä pois päältä esityksen aikana ja miks ei aina.
             }
         }
