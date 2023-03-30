@@ -164,6 +164,14 @@ namespace Harjoittelua
             player.Play();
         }
 
+        private void VoiceForStart()
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = @"Resources/round1Fight.wav";
+            player.Load();
+            player.Play();
+        }
+
         // Tarkistetaan jokainen ikoni nähdäksemme, onko sillä pari, vertaamalla
         // sen foreground väriä background väriin. Jos kaikilla ikoneilla on pari, 
         // pelaaja voittaa
@@ -186,8 +194,13 @@ namespace Harjoittelua
             // pelaaja voitti
             VoiceForGameEndWinner();
             timer2.Stop();
-            MessageBox.Show("Miten sä ton teit? Onnea nyt sitten");
-            //Close();//tämä pois päältä esityksen aikana ja miks ei aina.           
+
+            //Close();//tämä pois päältä esityksen aikana ja miks ei aina.          
+
+            MessageBox.Show("Miten sä ton teit ? ? ? Onnea nyt sitten", "Dark Mode The Game", MessageBoxButtons.OK);
+
+            //Close();           
+
             return true;
         }
 
@@ -219,6 +232,7 @@ namespace Harjoittelua
         private void startti_Click(object sender, EventArgs e)
         {
             timer2.Start();
+            VoiceForStart();
         }
         private int currentImageIndex = 0;
         private void timer3_Tick(object sender, EventArgs e)
